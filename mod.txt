@@ -3,7 +3,7 @@
   "description" : "Removes drop-in penalty so you can reconnect after crash",
   "author" : "Animepdf",
   "contact" : "dc @animepdf",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "priority" : 10,
   "color" : "0 255 255",
   "image" : "mod.png",
