@@ -12,7 +12,8 @@
   "desktop_disbled" : false,
   "needs_restart" : true,
   "hooks" : [
-    { "hook_id" : "lib/network/base/handlers/connectionnetworkhandler", "script_path" : "mod.lua" }
+    { "hook_id" : "lib/network/base/handlers/connectionnetworkhandler", "script_path" : "mod.lua" },
+    { "hook_id" : "lib/managers/statisticsmanager", "script_path" : "mod.lua" }
   ],
   "updates": [
   {
