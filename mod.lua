@@ -1,15 +1,19 @@
-Hooks:PostHook(ConnectionNetworkHandler, "set_dropin", "set_dropin_CFA", function()
-  Global.statistics_manager.playing_from_start = true
-  log("[CrashFriendlyAchievements] Overriding drop-in flag on network request")
-end)
+if RequiredScript == "lib/network/base/handlers/connectionnetworkhandler" then
+  Hooks:PostHook(ConnectionNetworkHandler, "set_dropin", "set_dropin_CFA", function()
+    Global.statistics_manager.playing_from_start = true
+    log("[CrashFriendlyAchievements] Overriding drop-in flag on network request")
+  end)
+end
 
-Hooks:PostHook(StatisticsManager, "start_session", "start_session_CFA", function(self, data)
+if RequiredScript == "lib/managers/statisticsmanager" then
+  Hooks:PostHook(StatisticsManager, "start_session", "start_session_CFA", function(self, data)
     Global.statistics_manager.playing_from_start = true
     self._start_session_drop_in = false
     self._start_session_from_beginning = true
     log("[CrashFriendlyAchievements] Overriding drop-in flag on session start")
-end)
+  end)
 
-Hooks:OverrideFunction(StatisticsManager, "is_dropin", function(self)
+  Hooks:OverrideFunction(StatisticsManager, "is_dropin", function()
     return false
-end)
+  end)
+end
